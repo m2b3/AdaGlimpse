@@ -5,7 +5,7 @@ import torch.nn as nn
 
 import torchvision.transforms.functional as TF
 
-from architectures.mae import mae_vit_base_patch16
+from AdaGlimpse.architectures.mae import mae_vit_base_patch16
 
 
 class BaseGlimpseSelector(abc.ABC):

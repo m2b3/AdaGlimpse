@@ -10,9 +10,9 @@ from torch.utils.data import RandomSampler
 from torchvision.datasets import ImageNet
 from torchvision.datasets.imagenet import ARCHIVE_META
 
-from datasets.base import BaseDataModule
-from datasets.three_augment import three_augment
-from datasets.utils import get_default_img_transform, get_default_aug_img_transform
+from AdaGlimpse.datasets.base import BaseDataModule
+from AdaGlimpse.datasets.three_augment import three_augment
+from AdaGlimpse.datasets.utils import get_default_img_transform, get_default_aug_img_transform
 
 
 class ClassificationDataset(torch.utils.data.Dataset):

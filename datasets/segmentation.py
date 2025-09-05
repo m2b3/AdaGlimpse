@@ -6,9 +6,9 @@ import torch
 from PIL import Image
 from torch.utils.data import DataLoader
 
-from datasets.base import BaseDataModule
-from datasets.classification import ImageNetWithStats
-from datasets.segmentation_transforms import get_aug_seg_transforms, get_seg_transforms
+from AdaGlimpse.datasets.base import BaseDataModule
+from AdaGlimpse.datasets.classification import ImageNetWithStats
+from AdaGlimpse.datasets.segmentation_transforms import get_aug_seg_transforms, get_seg_transforms
 
 
 class ADESegmentationDataset(torch.utils.data.Dataset):

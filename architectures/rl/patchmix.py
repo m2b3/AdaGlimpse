@@ -2,7 +2,7 @@ import numpy as np
 from timm.data.mixup import mixup_target
 from torch import Tensor
 
-from architectures.rl.shared_memory import SharedMemory
+from AdaGlimpse.architectures.rl.shared_memory import SharedMemory
 
 
 class InPlacePatchMix:

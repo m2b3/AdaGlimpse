@@ -5,7 +5,7 @@ from torch import Tensor
 from torchvision.transforms import InterpolationMode
 from torchvision.transforms.v2.functional import resize
 
-from architectures.rl.shared_memory import SharedMemory
+from AdaGlimpse.architectures.rl.shared_memory import SharedMemory
 
 
 class InteractiveStatelessSampler:

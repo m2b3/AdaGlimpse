@@ -6,8 +6,8 @@ import torch
 from PIL import Image
 from torch.utils.data import DataLoader
 
-from datasets.base import BaseDataModule
-from datasets.utils import get_default_aug_img_transform, get_default_img_transform
+from AdaGlimpse.datasets.base import BaseDataModule
+from AdaGlimpse.datasets.utils import get_default_aug_img_transform, get_default_img_transform
 
 
 class ReconstructionDataset(torch.utils.data.Dataset):

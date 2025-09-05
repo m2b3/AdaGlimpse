@@ -1,9 +1,9 @@
 from typing import Optional, Any, Dict
 
-from datasets.classification import ImageNetWithStats, ImageNet1k
-from datasets.patch_sampler import RandomUniformSampler
-from datasets.three_augment import three_augment
-from datasets.utils import get_default_img_transform
+from AdaGlimpse.datasets.classification import ImageNetWithStats, ImageNet1k
+from AdaGlimpse.datasets.patch_sampler import RandomUniformSampler
+from AdaGlimpse.datasets.three_augment import three_augment
+from AdaGlimpse.datasets.utils import get_default_img_transform
 
 
 class ElasticImageNetDataset(ImageNetWithStats):

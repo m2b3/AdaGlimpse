@@ -6,15 +6,15 @@ import torch
 import torchmetrics
 from torch import nn
 
-from architectures.base import BaseArchitecture
-from architectures.glimpse_selectors import PseudoElasticGlimpseSelector, ElasticAttentionMapEntropy, \
+from AdaGlimpse.architectures.base import BaseArchitecture
+from AdaGlimpse.architectures.glimpse_selectors import PseudoElasticGlimpseSelector, ElasticAttentionMapEntropy, \
     DivideFourGlimpseSelector, STAMLikeGlimpseSelector, ElasticSaliencyMap
-from architectures.mae import mae_vit_base_patch16
-from architectures.utils import MetricMixin
-from datasets.base import BaseDataModule
-from datasets.classification import BaseClassificationDataModule
-from datasets.patch_sampler import InteractiveSampler
-from datasets.utils import IMAGENET_MEAN, IMAGENET_STD
+from AdaGlimpse.architectures.mae import mae_vit_base_patch16
+from AdaGlimpse.architectures.utils import MetricMixin
+from AdaGlimpse.datasets.base import BaseDataModule
+from AdaGlimpse.datasets.classification import BaseClassificationDataModule
+from AdaGlimpse.datasets.patch_sampler import InteractiveSampler
+from AdaGlimpse.datasets.utils import IMAGENET_MEAN, IMAGENET_STD
 
 
 class ElasticMae(BaseArchitecture, ABC):

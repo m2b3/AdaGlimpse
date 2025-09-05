@@ -6,7 +6,7 @@ import torch.nn as nn
 from timm.layers import to_2tuple, Format
 from timm.models.layers import DropPath, Mlp
 
-from datasets.patch_sampler import GridSampler
+from AdaGlimpse.datasets.patch_sampler import GridSampler
 
 
 # This source code is licensed under the license found in the

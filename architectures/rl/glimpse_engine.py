@@ -8,8 +8,8 @@ from torch import Tensor
 from torch.multiprocessing import spawn
 from torch.multiprocessing.queue import Queue
 
-from architectures.rl.interactive_sampler import InteractiveStatelessSampler
-from architectures.rl.shared_memory import SharedMemory
+from AdaGlimpse.architectures.rl.interactive_sampler import InteractiveStatelessSampler
+from AdaGlimpse.architectures.rl.shared_memory import SharedMemory
 
 
 class BaseGlimpseEngine(ABC):

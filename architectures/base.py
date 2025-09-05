@@ -5,8 +5,8 @@ from typing import Any, Optional
 from lightning import LightningModule
 from torch.optim import AdamW
 
-from architectures.utils import MaeScheduler
-from datasets.base import BaseDataModule
+from AdaGlimpse.architectures.utils import MaeScheduler
+from AdaGlimpse.datasets.base import BaseDataModule
 
 
 class AutoconfigLightningModule(LightningModule):

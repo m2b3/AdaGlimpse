@@ -7,11 +7,11 @@ from typing import Any, Dict
 
 import torch
 
-from architectures.base import BaseArchitecture
-from architectures.mae import mae_vit_large_patch16
-from architectures.utils import dict_to_cpu
-from datasets.base import BaseDataModule
-from datasets.segmentation import BaseSegmentationDataModule
+from AdaGlimpse.architectures.base import BaseArchitecture
+from AdaGlimpse.architectures.mae import mae_vit_large_patch16
+from AdaGlimpse.architectures.utils import dict_to_cpu
+from AdaGlimpse.datasets.base import BaseDataModule
+from AdaGlimpse.datasets.segmentation import BaseSegmentationDataModule
 
 
 class BaseGlimpseMae(BaseArchitecture, ABC):

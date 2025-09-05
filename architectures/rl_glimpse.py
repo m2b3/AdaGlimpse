@@ -16,16 +16,16 @@ from torchrl.envs.utils import ExplorationType, set_exploration_type
 from torchrl.objectives import SoftUpdate, SACLoss
 from torchvision.models.segmentation import DeepLabV3, deeplabv3_resnet101
 
-from architectures.base import AutoconfigLightningModule
-from architectures.mae import MaskedAutoencoderViT, mae_vit_base_patch16, mae_vit_small_patch16, mae_vit_large_patch16
-from architectures.rl.actor_critic import ActorCritic
-from architectures.rl.glimpse_engine import glimpse_engine, BaseGlimpseEngine
-from architectures.rl.shared_memory import SharedMemory
-from architectures.utils import MetricMixin, RevNormalizer, filter_checkpoint, stub
-from datasets.base import BaseDataModule
-from datasets.classification import BaseClassificationDataModule
-from datasets.patch_sampler import PretrainingSampler
-from datasets.segmentation import BaseSegmentationDataModule
+from AdaGlimpse.architectures.base import AutoconfigLightningModule
+from AdaGlimpse.architectures.mae import MaskedAutoencoderViT, mae_vit_base_patch16, mae_vit_small_patch16, mae_vit_large_patch16
+from AdaGlimpse.architectures.rl.actor_critic import ActorCritic
+from AdaGlimpse.architectures.rl.glimpse_engine import glimpse_engine, BaseGlimpseEngine
+from AdaGlimpse.architectures.rl.shared_memory import SharedMemory
+from AdaGlimpse.architectures.utils import MetricMixin, RevNormalizer, filter_checkpoint, stub
+from AdaGlimpse.datasets.base import BaseDataModule
+from AdaGlimpse.datasets.classification import BaseClassificationDataModule
+from AdaGlimpse.datasets.patch_sampler import PretrainingSampler
+from AdaGlimpse.datasets.segmentation import BaseSegmentationDataModule
 
 
 class BaseRlMAE(AutoconfigLightningModule, MetricMixin, ABC):

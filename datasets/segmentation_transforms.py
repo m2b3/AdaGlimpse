@@ -6,8 +6,8 @@ from torchvision.transforms.transforms import RandomAffine, RandomHorizontalFlip
     RandomResizedCrop, RandomChoice
 from torchvision.transforms import InterpolationMode
 
-from datasets.three_augment import GrayScale, Solarization, GaussianBlur
-from datasets.utils import IMAGENET_MEAN, IMAGENET_STD
+from AdaGlimpse.datasets.three_augment import GrayScale, Solarization, GaussianBlur
+from AdaGlimpse.datasets.utils import IMAGENET_MEAN, IMAGENET_STD
 
 
 class MaskCompose:

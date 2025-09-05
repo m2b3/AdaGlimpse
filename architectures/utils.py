@@ -4,7 +4,7 @@ from typing import Dict, Callable, Optional
 import torch
 import torch.nn as nn
 
-from datasets.utils import IMAGENET_MEAN, IMAGENET_STD
+from AdaGlimpse.datasets.utils import IMAGENET_MEAN, IMAGENET_STD
 
 
 class MaeScheduler(nn.Module):
