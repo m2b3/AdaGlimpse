@@ -190,8 +190,8 @@ class ActorCritic(nn.Module):
                 out_keys=["loc", "scale"]
             ),
             spec=Bounded(
-                minimum=0,
-                maximum=1,
+                low=0,
+                high=1,
                 shape=action_dim,
                 dtype=torch.float
             ),
