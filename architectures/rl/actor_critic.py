@@ -5,7 +5,7 @@ import torch
 # noinspection PyProtectedMember
 from tensordict.nn import NormalParamExtractor, TensorDictModule, InteractionType
 from torch import nn
-from torchrl.data import BoundedTensorSpec
+from torchrl.data import Bounded
 from torchrl.modules import ProbabilisticActor, ValueOperator, TanhNormal
 
 
@@ -189,10 +189,11 @@ class ActorCritic(nn.Module):
                 in_keys=["mask", "patches", "attention", "coords", "observation"],
                 out_keys=["loc", "scale"]
             ),
-            spec=BoundedTensorSpec(
+            spec=Bounded(
                 minimum=0,
                 maximum=1,
-                shape=action_dim
+                shape=action_dim,
+                dtype=torch.float
             ),
             in_keys=["loc", "scale"],
             distribution_class=TanhNormal,
