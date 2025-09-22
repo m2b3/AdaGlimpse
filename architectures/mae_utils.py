@@ -3,8 +3,7 @@ from typing import Optional, Callable
 import numpy as np
 import torch
 import torch.nn as nn
-from timm.layers import to_2tuple, Format
-from timm.models.layers import DropPath, Mlp
+from timm.layers import to_2tuple, Format, DropPath, Mlp
 
 from AdaGlimpse.datasets.patch_sampler import GridSampler
 
