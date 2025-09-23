@@ -13,8 +13,8 @@ from lightning.pytorch.loggers import TensorBoardLogger, WandbLogger
 from lightning.pytorch.strategies import DDPStrategy
 from lightning_fabric.plugins.environments import SLURMEnvironment
 
-from architectures.base import AutoconfigLightningModule
-from utils.prepare import experiment_from_args
+from AdaGlimpse.architectures.base import AutoconfigLightningModule
+from AdaGlimpse.utils.prepare import experiment_from_args
 
 torch.set_float32_matmul_precision('high')
 

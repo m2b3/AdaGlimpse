@@ -6,8 +6,8 @@ from matplotlib.patches import Rectangle
 from torch import Tensor
 from torchvision.transforms.functional import resize, InterpolationMode
 
-from architectures.rl_glimpse import BaseRlMAE
-from utils.visualisation_blocks import Coords
+from AdaGlimpse.architectures.rl_glimpse import BaseRlMAE
+from AdaGlimpse.utils.visualisation_blocks import Coords
 
 
 def get_glimpse(image: Tensor, glimpse_coords: Coords, glimpse_grid_size: int) -> Tensor:

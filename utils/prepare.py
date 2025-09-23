@@ -5,8 +5,8 @@ import random
 import lightning
 import torch
 
-import architectures
-import datasets
+import AdaGlimpse.architectures
+import AdaGlimpse.datasets
 
 
 def experiment_from_args(argv, prog_name='TrainWhereToLookNext',
@@ -15,9 +15,9 @@ def experiment_from_args(argv, prog_name='TrainWhereToLookNext',
         prog=prog_name
     )
 
-    archs = {k: v for k, v in inspect.getmembers(architectures, inspect.isclass) if
+    archs = {k: v for k, v in inspect.getmembers(AdaGlimpse.architectures, inspect.isclass) if
              issubclass(v, lightning.LightningModule) and not inspect.isabstract(v)}
-    dss = {k: v for k, v in inspect.getmembers(datasets, inspect.isclass) if
+    dss = {k: v for k, v in inspect.getmembers(AdaGlimpse.datasets, inspect.isclass) if
            issubclass(v, lightning.LightningDataModule) and not inspect.isabstract(
                v) and k != 'LightningDataModule'}
 

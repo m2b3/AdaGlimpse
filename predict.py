@@ -7,12 +7,12 @@ import torch
 from lightning import Trainer
 from tqdm import tqdm
 
-from architectures.rl_glimpse import BaseRlMAE
-from architectures.utils import RevNormalizer
-from utils.prediction_hooks import RLStateReplaceHook, RLUserHook
-from utils.prepare import experiment_from_args
-from utils.visualisation_animate import animate_one
-from utils.visualisation_grid import visualize_grid
+from AdaGlimpse.architectures.rl_glimpse import BaseRlMAE
+from AdaGlimpse.architectures.utils import RevNormalizer
+from AdaGlimpse.utils.prediction_hooks import RLStateReplaceHook, RLUserHook
+from AdaGlimpse.utils.prepare import experiment_from_args
+from AdaGlimpse.utils.visualisation_animate import animate_one
+from AdaGlimpse.utils.visualisation_grid import visualize_grid
 
 random.seed(1)
 torch.manual_seed(1)

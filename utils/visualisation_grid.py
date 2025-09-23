@@ -4,8 +4,8 @@ import torch
 from matplotlib import pyplot as plt
 from torch import Tensor
 
-from architectures.rl_glimpse import BaseRlMAE
-from utils.visualisation_blocks import GridField, ImageGridField, SegmentationGridField, ClsPredictionGridField, \
+from AdaGlimpse.architectures.rl_glimpse import BaseRlMAE
+from AdaGlimpse.utils.visualisation_blocks import GridField, ImageGridField, SegmentationGridField, ClsPredictionGridField, \
     ClsTargetGridField, ScoreGridField, Coords, bbox_map, glimpse_map
 
 
