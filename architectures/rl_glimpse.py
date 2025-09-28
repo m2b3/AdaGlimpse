@@ -502,6 +502,7 @@ class BaseRlMAE(AutoconfigLightningModule, MetricMixin, ABC):
         raise NotImplementedError()
 
     def forward_game_state(self, env_state: SharedMemory, mode: str, distilled_target: Optional[torch.Tensor] = None):
+        is_done = env_state.is_done
         with_loss_and_grad = mode == 'train' and is_done
         with (nullcontext() if self.autograd_backbone and with_loss_and_grad else torch.no_grad()):
             step = env_state.current_glimpse
@@ -841,7 +842,6 @@ class ClassificationRlMAE(BaseRlMAE):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 
-        print(type(self.datamodule))
         assert isinstance(self.datamodule, BaseClassificationDataModule)
 
         self.loss_fn = torch.nn.CrossEntropyLoss()
