@@ -1,6 +1,6 @@
 import torch
 
-from architectures.rl.shared_memory import SharedMemory
+from AdaGlimpse.architectures.rl.shared_memory import SharedMemory
 
 
 class RLStateReplaceHook:
