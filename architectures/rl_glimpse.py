@@ -760,7 +760,7 @@ class BaseRlMAE(AutoconfigLightningModule, MetricMixin, ABC):
         next_state, step, backbone_loss = self.forward_game_state(env_state, mode=mode)
 
         if not env_state.is_done:
-            next_action = self.forward_action(next_state, exploration_type=ExplorationType.MEAN)
+            next_action = self.forward_action(next_state, exploration_type=ExplorationType.DETERMINISTIC)
             env_state.action = next_action.detach()
 
     def validation_step(self, batch, batch_idx):
