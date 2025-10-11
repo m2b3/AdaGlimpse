@@ -1,4 +1,5 @@
 import argparse
+import time
 import sys
 from abc import ABC, abstractmethod
 from contextlib import nullcontext
@@ -502,8 +503,13 @@ class BaseRlMAE(AutoconfigLightningModule, MetricMixin, ABC):
         raise NotImplementedError()
 
     def forward_game_state(self, env_state: SharedMemory, mode: str, distilled_target: Optional[torch.Tensor] = None):
+        import time
+
+        batch_glimpse_start_time = time.perf_counter()
+        
         is_done = env_state.is_done
         with_loss_and_grad = mode == 'train' and is_done
+        
         with (nullcontext() if self.autograd_backbone and with_loss_and_grad else torch.no_grad()):
             step = env_state.current_glimpse
             latent, pos_embed = self.mae.forward_encoder(env_state.current_patches, coords=env_state.current_coords,
@@ -553,7 +559,11 @@ class BaseRlMAE(AutoconfigLightningModule, MetricMixin, ABC):
             'patches': env_state.all_patches.clone()
         }, batch_size=observation.shape[0])
 
-        self.call_user_forward_hooks(env_state, out, score, attention, observation, next_state)
+        # Calculate glimpse duration and pass to hooks
+        batched_glimpse_end_time = time.perf_counter()
+        batched_glimpse_dur = batched_glimpse_end_time - batch_glimpse_start_time
+        
+        self.call_user_forward_hooks(env_state, out, score, attention, observation, next_state, batched_glimpse_dur)
 
         return next_state, step, loss
 
